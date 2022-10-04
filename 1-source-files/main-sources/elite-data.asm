@@ -9031,6 +9031,12 @@ ELSE
 
 ENDIF
 
+                        \ --- Mod: Code added for Universe Editor: ------------>
+
+INCBIN "3-assembled-output/EDITOR.unprot.bin"
+
+                        \ --- End of added code ------------------------------->
+
 \ ******************************************************************************
 \
 \ Save BDATA.unprot.bin

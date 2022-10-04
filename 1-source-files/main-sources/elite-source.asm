@@ -35894,6 +35894,16 @@ ENDIF
  JSR TITLE              \ distance of 200, returning with the internal number
                         \ of the key pressed in A
 
+                        \ --- Mod: Code added for Universe Editor: ------------>
+
+ CPX #f0                \ Did we press f0? If not, skip the following
+ BNE P%+5               \ instruction
+
+ JMP UniverseEditor     \ We pressed f0, so jump to UniverseEditor to start the
+                        \ universe editor
+
+                        \ --- End of added code ------------------------------->
+
  CPX #'Y'               \ Did we press "Y"? If not, jump to QU5, otherwise
  BNE QU5                \ continue on to load a new commander
 
@@ -46320,3 +46330,25 @@ PRINT "S.ELTH ", ~CODE_H%, " ", ~P%, " ", ~LOAD%, " ", ~LOAD_H%
 
 PRINT "S.BCODE ", ~CODE%, " ", ~P%, " ", ~LOAD%, " ", ~LOAD%
 SAVE "3-assembled-output/BCODE.unprot.bin", CODE%, P%, LOAD%
+
+                        \ --- Mod: Code added for Universe Editor: ------------>
+
+\ ******************************************************************************
+\
+\ Save EDITOR.unprot.bin
+\
+\ ******************************************************************************
+
+CODE_EDITOR% = &B200
+LOAD_EDITOR% = &B200
+ORG CODE_EDITOR%
+
+_6502SP_VERSION = FALSE
+_MASTER_VERSION = TRUE
+
+INCLUDE "1-source-files/main-sources/elite-universe-editor1.asm"
+INCLUDE "1-source-files/main-sources/elite-universe-editor2.asm"
+
+SAVE "3-assembled-output/EDITOR.unprot.bin", CODE_EDITOR%, P%, LOAD_EDITOR%
+
+                        \ --- End of added code ------------------------------->

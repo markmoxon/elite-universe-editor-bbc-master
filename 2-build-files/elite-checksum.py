@@ -40,7 +40,7 @@ scramble_from = 0x2cc1
 
 if release == 1:
     # SNG47
-    scramble_to = 0x7F47
+    scramble_to = 0x7F4E    # Modified for Universe Editor
 elif release == 2:
     # Compact
     scramble_to = 0x7FEC
