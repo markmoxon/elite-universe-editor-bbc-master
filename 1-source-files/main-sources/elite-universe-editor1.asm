@@ -2313,7 +2313,12 @@ IF _6502SP_VERSION
                         \ the drive number in the "DELETE:0.E.1234567" string
                         \ gets updated (i.e. the number after the colon)
 
+ LDA #9                 \ Print extended token 9 ("{clear bottom of screen}FILE
+ JSR DETOK              \ TO DELETE?")
+
 ELIF _MASTER_VERSION
+
+IF _SNG47
 
  LDA CTLI+4             \ The call to CATS above put the drive number into
  STA DELI+8             \ CTLI+4, so copy the drive number into DELI+8 so that
@@ -2321,13 +2326,6 @@ ELIF _MASTER_VERSION
                         \ gets updated (i.e. the number after the colon)
 
 ENDIF
-
-IF _6502SP_VERSION
-
- LDA #9                 \ Print extended token 9 ("{clear bottom of screen}FILE
- JSR DETOK              \ TO DELETE?")
-
-ELIF _MASTER_VERSION
 
  LDA #8                 \ Print extended token 8 ("{single cap}COMMANDER'S
  JSR DETOK              \ NAME? ")
@@ -2344,9 +2342,37 @@ ENDIF
                         \ that it overwrites the filename part of the string,
                         \ i.e. the "E.1234567" part of "DELETE:0.E.1234567"
 
+IF _6502SP_VERSION
+
  LDX #9                 \ Set up a counter in X to count from 9 to 1, so that we
                         \ copy the string starting at INWK+4+1 (i.e. INWK+5) to
                         \ DELI+8+1 (i.e. DELI+9 onwards, or "E.1234567")
+
+ELIF _MASTER_VERSION
+
+IF _SNG47
+
+                        \ We now copy the entered filename from INWK to DELI, so
+                        \ that it overwrites the filename part of the string,
+                        \ i.e. the "E.1234567" part of "DELETE :1.1234567"
+
+ LDX #9                 \ Set up a counter in X to count from 9 to 1, so that we
+                        \ copy the string starting at INWK+4+1 (i.e. INWK+5) to
+                        \ DELI+9+1 (i.e. DELI+10 onwards, or "1.1234567")
+
+ELIF _COMPACT
+
+                        \ We now copy the entered filename from INWK to DELI, so
+                        \ that it overwrites the filename part of the string,
+                        \ i.e. the "1234567890" part of "DELETE 1234567890"
+
+ LDX #8                 \ Set up a counter in X to count from 8 to 0, so that we
+                        \ copy the string starting at INWK+5+0 (i.e. INWK+5) to
+                        \ DELI+7+0 (i.e. DELI+7 onwards, or "1234567890")
+
+ENDIF
+
+ENDIF
 
 .dele1
 
@@ -2355,17 +2381,40 @@ IF _6502SP_VERSION
  LDA INWK+4,X           \ Copy the X-th byte of INWK+4 to the X-th byte of
  STA DELI+8,X           \ DELI+8
 
-ELIF _MASTER_VERSION
-
- LDA INWK+4,X           \ Copy the X-th byte of INWK+4 to the X-th byte of
- STA DELI+9,X           \ DELI+9
-
-ENDIF
-
  DEX                    \ Decrement the loop counter
 
  BNE dele1              \ Loop back to delt1 to copy the next character until we
                         \ have copied the whole filename
+
+ELIF _MASTER_VERSION
+
+IF _SNG47
+
+ LDA INWK+4,X           \ Copy the X-th byte of INWK+4 to the X-th byte of
+ STA DELI+9,X           \ DELI+9
+
+ DEX                    \ Decrement the loop counter
+
+ BNE dele1              \ Loop back to dele1 to copy the next character until we
+                        \ have copied the whole filename
+
+ JSR SWAPZP             \ Call SWAPZP to restore the top part of zero page
+
+ELIF _COMPACT
+
+ LDA INWK+5,X           \ Copy the X-th byte of INWK+5 to the X-th byte of
+ STA DELI+7,X           \ DELI+7
+
+ DEX                    \ Decrement the loop counter
+
+ BPL dele1              \ Loop back to dele1 to copy the next character until we
+                        \ have copied the whole filename
+
+ JSR NMIRELEASE         \ Release the NMI workspace (&00A0 to &00A7)
+
+ENDIF
+
+ENDIF
 
  LDX #LO(DELI)          \ Set (Y X) to point to the OS command at DELI, which
  LDY #HI(DELI)          \ contains the DFS command for deleting this file
@@ -2377,8 +2426,6 @@ IF _6502SP_VERSION
                         \ running to indicate disc access is in progress
 
 ELIF _MASTER_VERSION
-
- JSR SWAPZP             \ Call SWAPZP to restore the top part of zero page
 
  JSR OSCLI              \ Call OSCLI to execute the OS command at (Y X), which
                         \ catalogues the disc
@@ -2510,8 +2557,13 @@ ENDIF
 
  LDA #'U'               \ Change the directory to U
  STA S1%+3
- STA DELI+9
  STA dirCommand+4
+
+IF _6502SP_VERSION
+
+ STA DELI+9
+
+ENDIF
 
  LDX #LO(dirCommand)    \ Set (Y X) to point to dirCommand ("DIR U")
  LDY #HI(dirCommand)
@@ -2635,8 +2687,13 @@ ENDIF
 
  LDA #'E'               \ Change the directory back to E
  STA S1%+3
- STA DELI+9
  STA dirCommand+4
+
+IF _6502SP_VERSION
+
+ STA DELI+9
+
+ENDIF
 
  LDX #LO(dirCommand)    \ Set (Y X) to point to dirCommand ("DIR E")
  LDY #HI(dirCommand)
