@@ -16019,310 +16019,311 @@ Saving file '3-assembled-output/BCODE.unprot.bin'
      B759   A2 00      LDX #&00
      B75B   A0 00      LDY #&00
      B75D   4C 00 B5   JMP &B500
-.ShowToken
-     B760   48         PHA
-     B761   AA         TAX
-     B762   98         TYA
-     B763   48         PHA
-     B764   A5 3A      LDA &3A
-     B766   48         PHA
-     B767   A5 3B      LDA &3B
-     B769   48         PHA
-     B76A   A9 73      LDA #&73
-     B76C   85 3A      STA &3A
-     B76E   A9 B7      LDA #&B7
-     B770   4C 5F 32   JMP &325F
 .UniverseToken
-     B773   57
+     B760   57
 Macro EJMP:
-     B774   5E
+     B761   5E
 End macro EJMP
 Macro EJMP:
-     B775   5C
+     B762   5C
 End macro EJMP
 Macro EJMP:
-     B776   56
+     B763   56
 End macro EJMP
 Macro EJMP:
-     B777   5F
+     B764   5F
 End macro EJMP
+Macro ECHR:
+     B765   77
+End macro ECHR
+Macro ETWO:
+     B766   A6
+End macro ETWO
+Macro ECHR:
+     B767   04
+End macro ECHR
+Macro ECHR:
+     B768   1C
+End macro ECHR
+Macro ECHR:
+     B769   77
+End macro ECHR
+Macro ECHR:
+     B76A   16
+End macro ECHR
+Macro ECHR:
+     B76B   14
+End macro ECHR
+Macro ETWO:
+     B76C   BE
+End macro ETWO
+Macro ECHR:
+     B76D   04
+End macro ECHR
+Macro ECHR:
+     B76E   04
+End macro ECHR
+Macro ECHR:
+     B76F   77
+End macro ECHR
+Macro ECHR:
+     B770   1A
+End macro ECHR
+Macro ECHR:
+     B771   12
+End macro ECHR
+Macro ETWO:
+     B772   B6
+End macro ETWO
+Macro ETWO:
+     B773   80
+End macro ETWO
+Macro EJMP:
+     B774   5D
+End macro EJMP
+Macro EJMP:
+     B775   55
+End macro EJMP
+Macro ECHR:
+     B776   66
+End macro ECHR
+Macro ECHR:
+     B777   79
+End macro ECHR
 Macro ECHR:
      B778   77
 End macro ECHR
 Macro ETWO:
-     B779   A6
+     B779   B7
 End macro ETWO
 Macro ECHR:
-     B77A   04
+     B77A   16
 End macro ECHR
 Macro ECHR:
-     B77B   1C
+     B77B   13
 End macro ECHR
 Macro ECHR:
      B77C   77
 End macro ECHR
 Macro ECHR:
-     B77D   16
+     B77D   02
 End macro ECHR
 Macro ECHR:
-     B77E   14
-End macro ECHR
-Macro ETWO:
-     B77F   BE
-End macro ETWO
-Macro ECHR:
-     B780   04
+     B77E   19
 End macro ECHR
 Macro ECHR:
-     B781   04
-End macro ECHR
-Macro ECHR:
-     B782   77
-End macro ECHR
-Macro ECHR:
-     B783   1A
-End macro ECHR
-Macro ECHR:
-     B784   12
+     B77F   1E
 End macro ECHR
 Macro ETWO:
-     B785   B6
+     B780   AD
 End macro ETWO
-Macro ETWO:
-     B786   80
-End macro ETWO
-Macro EJMP:
-     B787   5D
-End macro EJMP
-Macro EJMP:
-     B788   55
-End macro EJMP
 Macro ECHR:
-     B789   66
-End macro ECHR
-Macro ECHR:
-     B78A   79
-End macro ECHR
-Macro ECHR:
-     B78B   77
+     B781   05
 End macro ECHR
 Macro ETWO:
-     B78C   B7
-End macro ETWO
-Macro ECHR:
-     B78D   16
-End macro ECHR
-Macro ECHR:
-     B78E   13
-End macro ECHR
-Macro ECHR:
-     B78F   77
-End macro ECHR
-Macro ECHR:
-     B790   02
-End macro ECHR
-Macro ECHR:
-     B791   19
-End macro ECHR
-Macro ECHR:
-     B792   1E
-End macro ECHR
-Macro ETWO:
-     B793   AD
-End macro ETWO
-Macro ECHR:
-     B794   05
-End macro ECHR
-Macro ETWO:
-     B795   8D
+     B782   8D
 End macro ETWO
 Macro ETWO:
-     B796   80
+     B783   80
 End macro ETWO
 Macro ECHR:
-     B797   65
+     B784   65
 End macro ECHR
 Macro ECHR:
-     B798   79
+     B785   79
 End macro ECHR
 Macro ECHR:
-     B799   77
+     B786   77
 End macro ECHR
 Macro ECHR:
-     B79A   04
+     B787   04
 End macro ECHR
 Macro ECHR:
-     B79B   16
+     B788   16
 End macro ECHR
 Macro ETWO:
-     B79C   AD
+     B789   AD
 End macro ETWO
 Macro ECHR:
-     B79D   77
+     B78A   77
 End macro ECHR
 Macro ECHR:
-     B79E   02
+     B78B   02
 End macro ECHR
 Macro ECHR:
-     B79F   19
+     B78C   19
 End macro ECHR
 Macro ECHR:
-     B7A0   1E
+     B78D   1E
 End macro ECHR
 Macro ETWO:
-     B7A1   AD
+     B78E   AD
 End macro ETWO
 Macro ECHR:
-     B7A2   05
+     B78F   05
 End macro ECHR
 Macro ETWO:
-     B7A3   8D
+     B790   8D
 End macro ETWO
 Macro ECHR:
-     B7A4   77
+     B791   77
 End macro ECHR
 Macro EJMP:
-     B7A5   53
+     B792   53
 End macro EJMP
 Macro ETWO:
-     B7A6   80
+     B793   80
 End macro ETWO
 Macro ECHR:
-     B7A7   64
+     B794   64
 End macro ECHR
 Macro ECHR:
-     B7A8   79
+     B795   79
 End macro ECHR
 Macro ECHR:
-     B7A9   77
+     B796   77
 End macro ECHR
 Macro ECHR:
-     B7AA   14
+     B797   14
 End macro ECHR
 Macro ETWO:
-     B7AB   A2
+     B798   A2
 End macro ETWO
 Macro ECHR:
-     B7AC   16
+     B799   16
 End macro ECHR
 Macro ETWO:
-     B7AD   B7
+     B79A   B7
 End macro ETWO
 Macro ECHR:
-     B7AE   10
+     B79B   10
 End macro ECHR
 Macro ECHR:
-     B7AF   02
+     B79C   02
 End macro ECHR
 Macro ECHR:
-     B7B0   12
+     B79D   12
 End macro ECHR
 Macro ETWO:
-     B7B1   80
+     B79E   80
 End macro ETWO
 Macro ECHR:
-     B7B2   63
+     B79F   63
 End macro ECHR
 Macro ECHR:
-     B7B3   79
+     B7A0   79
 End macro ECHR
 Macro ECHR:
-     B7B4   77
+     B7A1   77
 End macro ECHR
 Macro ECHR:
-     B7B5   13
+     B7A2   13
 End macro ECHR
 Macro ECHR:
-     B7B6   12
+     B7A3   12
 End macro ECHR
 Macro ECHR:
-     B7B7   1B
+     B7A4   1B
 End macro ECHR
 Macro ETWO:
-     B7B8   8A
+     B7A5   8A
 End macro ETWO
 Macro ECHR:
-     B7B9   12
+     B7A6   12
 End macro ECHR
 Macro ETOK:
-     B7BA   87
+     B7A7   87
 End macro ETOK
 Macro ECHR:
-     B7BB   11
+     B7A8   11
 End macro ECHR
 Macro ECHR:
-     B7BC   1E
+     B7A9   1E
 End macro ECHR
 Macro ETWO:
-     B7BD   B2
+     B7AA   B2
 End macro ETWO
 Macro ETWO:
-     B7BE   80
+     B7AB   80
 End macro ETWO
 Macro ECHR:
-     B7BF   62
+     B7AC   62
 End macro ECHR
 Macro ECHR:
-     B7C0   79
+     B7AD   79
 End macro ECHR
 Macro ECHR:
-     B7C1   77
+     B7AE   77
 End macro ECHR
 Macro ECHR:
-     B7C2   07
+     B7AF   07
 End macro ECHR
 Macro ETWO:
-     B7C3   AE
+     B7B0   AE
 End macro ETWO
 Macro ECHR:
-     B7C4   0E
+     B7B1   0E
 End macro ECHR
 Macro ECHR:
-     B7C5   77
+     B7B2   77
 End macro ECHR
 Macro ECHR:
-     B7C6   02
+     B7B3   02
 End macro ECHR
 Macro ECHR:
-     B7C7   19
+     B7B4   19
 End macro ECHR
 Macro ECHR:
-     B7C8   1E
+     B7B5   1E
 End macro ECHR
 Macro ETWO:
-     B7C9   AD
+     B7B6   AD
 End macro ETWO
 Macro ECHR:
-     B7CA   05
+     B7B7   05
 End macro ECHR
 Macro ETWO:
-     B7CB   8D
+     B7B8   8D
 End macro ETWO
 Macro ETWO:
-     B7CC   80
+     B7B9   80
 End macro ETWO
 Macro ECHR:
-     B7CD   61
+     B7BA   61
 End macro ECHR
 Macro ECHR:
-     B7CE   79
+     B7BB   79
 End macro ECHR
 Macro ECHR:
-     B7CF   77
+     B7BC   77
 End macro ECHR
 Macro ECHR:
-     B7D0   12
+     B7BD   12
 End macro ECHR
 Macro ECHR:
-     B7D1   0F
+     B7BE   0F
 End macro ECHR
 Macro ETWO:
-     B7D2   8C
+     B7BF   8C
 End macro ETWO
 Macro ETWO:
-     B7D3   80
+     B7C0   80
 End macro ETWO
-     B7D4   57
+     B7C1   57
+.endUniverseEditor1
+.ShowToken
+     B7C2   48         PHA
+     B7C3   AA         TAX
+     B7C4   98         TYA
+     B7C5   48         PHA
+     B7C6   A5 3A      LDA &3A
+     B7C8   48         PHA
+     B7C9   A5 3B      LDA &3B
+     B7CB   48         PHA
+     B7CC   A9 60      LDA #&60
+     B7CE   85 3A      STA &3A
+     B7D0   A9 B7      LDA #&B7
+     B7D2   4C 5F 32   JMP &325F
 .DeleteUniverse
      B7D5   20 84 69   JSR &6984
      B7D8   B0 47      BCS &B821
@@ -16388,7 +16389,7 @@ End macro ETWO
      B85A   8E B8 66   STX &66B8
      B85D   20 88 4A   JSR &4A88
      B860   A9 01      LDA #&01
-     B862   20 60 B7   JSR &B760
+     B862   20 C2 B7   JSR &B7C2
      B865   20 BB 6D   JSR &6DBB
      B868   C9 31      CMP #&31
      B86A   90 31      BCC &B89D
@@ -16445,7 +16446,6 @@ End macro ETWO
      B8D9   A2 00      LDX #&00
      B8DB   8E 77 0E   STX &0E77
      B8DE   4C FD B3   JMP &B3FD
-.endUniverseEditor1
 .DefaultName
      B8E1   4D 79 53 ...
      B8E8   0D
