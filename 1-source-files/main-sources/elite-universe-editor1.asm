@@ -112,6 +112,9 @@ ELIF _MASTER_VERSION
 
 ENDIF
 
+ LDA #%11100111         \ Disable the clearing of bit 7 (lasers firing) in
+ STA WS1-3              \ WPSHPS
+
  LDA #&60               \ Disable DOEXP so that by default it draws an explosion
  STA DOEXP+9            \ cloud but doesn't recalculate it
 
@@ -244,6 +247,9 @@ ELIF _MASTER_VERSION
  STA LL74+20
 
 ENDIF
+
+ LDA #%10100111         \ Re-enable  the clearing of bit 7 (lasers firing) in
+ STA WS1-3              \ WPSHPS
 
  LDA #&A5               \ Re-enable DOEXP
  STA DOEXP+9
