@@ -2618,10 +2618,10 @@ ENDIF
 
 .ShowDiscMenu
 
- LDA #HI(NAME)          \ Change TR1 so it uses the universe name in NAME as the
- STA GTL2+2             \ default when no filename is entered
- LDA #LO(NAME)
- STA GTL2+1
+ LDA #LO(NAME)          \ Change TR1 so it uses the universe name in NAME as the
+ STA GTL2+1             \ default when no filename is entered
+ LDA #HI(NAME)
+ STA GTL2+2
 
  LDA #&11               \ Change token 8 in TKN1 to "File Name"
  STA token8
@@ -2647,9 +2647,9 @@ IF _6502SP_VERSION
 
 ELIF _MASTER_VERSION
 
- LDA #LO(ShowDiscMenu)  \ Stop BRBR error handler from returning to the SVE
+ LDA #LO(afterBrk)      \ Stop BRBR error handler from returning to the SVE
  STA DEATH-2            \ routine, jump back here instead
- LDA #HI(ShowDiscMenu)
+ LDA #HI(afterBrk)
  STA DEATH-1
 
 ENDIF
@@ -2853,10 +2853,10 @@ ENDIF
  LDA #&04
  STA token8+2
 
- LDA #HI(NA%)           \ Revert TR1 so it uses the commander name in NA% as the
- STA GTL2+2             \ default when no filename is entered
- LDA #LO(NA%)
- STA GTL2+1
+ LDA #LO(NA%)           \ Revert TR1 so it uses the commander name in NA% as the
+ STA GTL2+1             \ default when no filename is entered
+ LDA #HI(NA%)
+ STA GTL2+2
 
 IF _6502SP_VERSION
 

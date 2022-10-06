@@ -383,16 +383,33 @@ ENDIF
  LDA #&2C               \ Disable JSR ZERO and JSR DIALS in RES2
  STA yu+3
 
+IF _6502SP_VERSION
+
  LDA #&60               \ Turn JSR DIALS in RES2 into an RTS
  STA yu+16
+
+ELIF _MASTER_VERSION
+
+ LDA #&60               \ Turn ZINF fallthrough into an RTS
+ STA ZINF
+
+ENDIF
 
  JSR RES2               \ Reset a number of flight variables and workspaces
 
  LDA #&20               \ Re-enable JSR ZERO and JSR DIALS in RES2
  STA yu+3
 
+IF _6502SP_VERSION
+
  STA yu+16              \ Re-enable JSR DIALS in RES2
 
+ELIF _MASTER_VERSION
+
+ LDA #&A0               \ Re-enable ZINF fallthrough
+ STA ZINF
+
+ENDIF
                         \ We now do what ZERO would have done, but leaving
                         \ the ship slots alone, and we then call DIALS and ZINF
                         \ as we disabled them above
