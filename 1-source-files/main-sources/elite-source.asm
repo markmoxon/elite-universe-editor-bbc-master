@@ -46348,6 +46348,7 @@ _MASTER_VERSION = TRUE
 
 INCLUDE "1-source-files/main-sources/elite-universe-editor1.asm"
 INCLUDE "1-source-files/main-sources/elite-universe-editor2.asm"
+INCLUDE "1-source-files/main-sources/elite-universe-editor3.asm"
 
 SAVE "3-assembled-output/EDITOR.unprot.bin", CODE_EDITOR%, P%, LOAD_EDITOR%
 
