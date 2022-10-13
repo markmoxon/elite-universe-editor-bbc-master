@@ -46,6 +46,7 @@ keyH = &54
 keyK = &46
 keyL = &56
 keyM = &65
+keyN = &55
 keyO = &36
 keyP = &37
 keyQ = &10
@@ -95,6 +96,7 @@ keyH = &48
 keyK = &4B
 keyL = &4C
 keyM = &4D
+keyN = &4E
 keyO = &4F
 keyP = &50
 keyQ = &51
@@ -314,7 +316,7 @@ IF _6502SP_VERSION
 ELIF _MASTER_VERSION
 
  LDA #&85               \ Re-enable the STA XX1+31 instruction in part 9 of LL9
- STA LL74+20
+ STA LL74+16
 
 ENDIF
 
@@ -767,6 +769,10 @@ ENDIF
  BNE P%+5
  JMP HighlightScanner
 
+ CMP #keyN              \ N (target missile)
+ BNE P%+5
+ JMP TargetMissile
+
  CMP #keyAt             \ @ (show disc access menu)
  BNE P%+5
  JMP ShowDiscMenu
@@ -846,15 +852,15 @@ ENDIF
 .draw1
 
  LDA FRIN,X             \ If the slot is empty, return from the subroutine as
- BEQ draw2              \ we are done
+ BEQ draw4              \ we are done
 
  PHX                    \ Store the counter on the stack
 
  JSR GetShipData        \ Fetch the details for the ship in slot X
 
  LDA INWK+31            \ If bit 5 of byte #31 is clear, then the ship is not
- AND #%00100000         \ exploding, so jump to draw3 to skip the following
- BEQ draw3
+ AND #%00100000         \ exploding, so jump to draw2 to skip the following
+ BEQ draw2
 
                         \ The ship is exploding
 
@@ -866,13 +872,13 @@ ENDIF
 \ LDA #&60               \ Disable DOEXP again
 \ STA DOEXP+9
 
- BNE draw4
+ BNE draw3
 
-.draw3
+.draw2
 
  JSR DrawShip           \ Draw the ship
 
-.draw4
+.draw3
 
  PLX                    \ Retrieve the counter from the stack
 
@@ -881,7 +887,7 @@ ENDIF
  CPX #NOSH              \ Loop back until we have drawn all the ships
  BCC draw1
 
-.draw2
+.draw4
 
  RTS                    \ Return from the subroutine
 
@@ -995,7 +1001,10 @@ ENDIF
 
  JSR EraseShip          \ Erase the existing space station
 
- JSR KS4                \ Switch to the sun, erasing the space station bulb
+ JSR KS4                \ Switch to the sun, showing the space station bulb
+
+ JSR SPBLB              \ Call SPBLB to redraw the space station bulb, which
+                        \ will erase it from the dashboard
 
  JSR SetSBulb           \ Show or hide the space station bulb according to the
                         \ setting of bit 4 of INWK+36 (NEWB)
@@ -1009,7 +1018,7 @@ ENDIF
 
  JSR STORE              \ Store the updated sun
 
- BNE swap5              \ Jump to swap4 (this BNE is effectively a JMP as A is
+ BNE swap4              \ Jump to swap3 (this BNE is effectively a JMP as A is
                         \ never zero)
 
 .swap1
@@ -1020,11 +1029,15 @@ ENDIF
                         \ can't have both the sun and the space station at the
                         \ same time
 
+ LDA #SST               \ Set the ship type to the space station
+ STA TYPE
+
+ JSR ZINF               \ Reset the station coordinates
 
  LDA #1                 \ Set the tech level for a Coriolis station
  STA tek
 
- BNE swap4              \ Jump to swap4 (this BNE is effectively a JMP as A is
+ BNE swap3              \ Jump to swap3 (this BNE is effectively a JMP as A is
                         \ never zero)
 
 .swap2
@@ -1036,18 +1049,11 @@ ENDIF
  LDA #10                \ Set the tech level for a Dodo station
  STA tek
 
-.swap4
+.swap3
 
- LDA #SST               \ Set the ship type to the space station
- STA TYPE
-
- LDA #%00010000         \ Set the showingS flag to denote that we are showing
- STA showingS           \ the space station bulb
-
- JSR ZINF               \ Reset the station coordinates
-
- JSR NWSPS              \ Add a new space station to our local bubble of
-                        \ universe
+ JSR NWSPS+3            \ Add a new space station to our local bubble of
+                        \ universe, skipping the drawing of the space station
+                        \ bulb
 
  JSR SetSBulb           \ Show or hide the space station bulb according to the
                         \ setting of bit 4 of INWK+36 (NEWB)
@@ -1056,7 +1062,7 @@ ENDIF
 
  JSR STORE              \ Store the updated station
 
-.swap5
+.swap4
 
  JMP DrawShip           \ Draw the ship and return from the subroutine using a
                         \ tail call
@@ -1250,6 +1256,10 @@ ENDIF
  LDA #%10000000
  JSR TWIST2
 
+ LDA #127               \ Set the pitch and roll counters to 127 (no damping
+ STA INWK+29            \ so the planet's rotation doesn't slow down)
+ STA INWK+30
+
  LDA #2                 \ This is a planet/sun, so set A = 2 to store as the
                         \ sign-byte distance
 
@@ -1278,6 +1288,10 @@ ENDIF
 
  CMP #SST               \ If this is a space station, jump to init4 to set a
  BEQ init4              \ distance of 5
+
+ LDA INWK+32            \ This is a ship, so enable AI by setting bit 7 of
+ ORA #%10000000         \ INWK+32
+ STA INWK+32
 
  LDA #2                 \ Set A = 2 to store as the high-byte distance for the
                         \ new ship, so it's is a little way in front of us
@@ -1437,9 +1451,6 @@ ENDIF
 
 .AddShip
 
- LDA #0                 \ Set the delay in DLY to 0, so any new in-flight
- STA DLY                \ messages will be shown instantly
-
  JSR SetupPrompt        \ Move the cursor and set the colour for a prompt
 
  LDA #185               \ Print text token 25 ("SHIP") followed by a question
@@ -1519,6 +1530,8 @@ ENDIF
  JSR InitialiseShip     \ Initialise the ship coordinates
 
  JSR CreateShip         \ Create the new ship
+
+ JSR PrintShipType      \ Print the current ship type on the screen
 
 .add5
 
