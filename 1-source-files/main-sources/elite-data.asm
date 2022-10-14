@@ -3318,19 +3318,41 @@ ENDMACRO
 \
 \ ******************************************************************************
 
-IF _MATCH_ORIGINAL_BINARIES
+                        \ --- Mod: Original Acornsoft code removed: ----------->
 
- IF _SNG47
-  INCBIN "4-reference-binaries/sng47/workspaces/DATA-align.bin"
- ELIF _COMPACT
-  INCBIN "4-reference-binaries/compact/workspaces/DATA-align.bin"
- ENDIF
+\IF _MATCH_ORIGINAL_BINARIES
 
-ELSE
+\ IF _SNG47
+\  INCBIN "4-reference-binaries/sng47/workspaces/DATA-align.bin"
+\ ELIF _COMPACT
+\  INCBIN "4-reference-binaries/compact/workspaces/DATA-align.bin"
+\ ENDIF
 
-  SKIP 619              \ These bytes appear to be unused
+\ELSE
 
-ENDIF
+\  SKIP 619             \ These bytes appear to be unused
+
+\ENDIF
+
+                        \ --- And replaced by: -------------------------------->
+
+_6502SP_VERSION = FALSE
+_MASTER_VERSION = TRUE
+
+P = &000C
+T = &007C
+K = &0056
+R = &007A
+SC = &000A
+SCH = &000B
+VIA = &FE00
+
+INCLUDE "1-source-files/main-sources/elite-universe-editor-z.asm"
+
+ORG &A000
+
+                        \ --- End of replacement ------------------------------>
+
 
 \ ******************************************************************************
 \

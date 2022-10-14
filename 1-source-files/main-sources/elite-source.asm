@@ -46300,6 +46300,16 @@ IF _SNG47
 
 ENDIF
 
+                        \ --- Mod: Code added for Universe Editor: ------------>
+
+_6502SP_VERSION = FALSE
+_MASTER_VERSION = TRUE
+
+INCLUDE "1-source-files/main-sources/elite-universe-editor-variables.asm"
+INCLUDE "1-source-files/main-sources/elite-universe-editor3.asm"
+
+                        \ --- End of added code ------------------------------->
+
 \ ******************************************************************************
 \
 \       Name: F%
@@ -46361,12 +46371,13 @@ CODE_EDITOR% = &B200
 LOAD_EDITOR% = &B200
 ORG CODE_EDITOR%
 
-_6502SP_VERSION = FALSE
-_MASTER_VERSION = TRUE
+EditorDashboard = &9E90
+GameDashboard = &9EC5
 
 INCLUDE "1-source-files/main-sources/elite-universe-editor1.asm"
 INCLUDE "1-source-files/main-sources/elite-universe-editor2.asm"
-INCLUDE "1-source-files/main-sources/elite-universe-editor3.asm"
+INCLUDE "1-source-files/main-sources/elite-universe-editor4.asm"
+\INCLUDE "1-source-files/main-sources/elite-universe-editor-z.asm"
 
 SAVE "3-assembled-output/EDITOR.unprot.bin", CODE_EDITOR%, P%, LOAD_EDITOR%
 
