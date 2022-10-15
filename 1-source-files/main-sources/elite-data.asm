@@ -3336,23 +3336,11 @@ ENDMACRO
 
                         \ --- And replaced by: -------------------------------->
 
-_6502SP_VERSION = FALSE
-_MASTER_VERSION = TRUE
-
-P = &000C
-T = &007C
-K = &0056
-R = &007A
-SC = &000A
-SCH = &000B
-VIA = &FE00
-
-INCLUDE "1-source-files/main-sources/elite-universe-editor-z.asm"
+INCBIN "3-assembled-output/EDITORZ.unprot.bin"
 
 ORG &A000
 
-                        \ --- End of replacement ------------------------------>
-
+                        \ --- End of added code ------------------------------->
 
 \ ******************************************************************************
 \

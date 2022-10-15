@@ -46369,16 +46369,28 @@ SAVE "3-assembled-output/BCODE.unprot.bin", CODE%, P%, LOAD%
 
 CODE_EDITOR% = &B200
 LOAD_EDITOR% = &B200
-ORG CODE_EDITOR%
 
-EditorDashboard = &9E90
-GameDashboard = &9EC5
+ORG CODE_EDITOR%
 
 INCLUDE "1-source-files/main-sources/elite-universe-editor1.asm"
 INCLUDE "1-source-files/main-sources/elite-universe-editor2.asm"
 INCLUDE "1-source-files/main-sources/elite-universe-editor4.asm"
-\INCLUDE "1-source-files/main-sources/elite-universe-editor-z.asm"
 
 SAVE "3-assembled-output/EDITOR.unprot.bin", CODE_EDITOR%, P%, LOAD_EDITOR%
+
+\ ******************************************************************************
+\
+\ Save EDITORZ.unprot.bin
+\
+\ ******************************************************************************
+
+CODE_EDITORZ% = &9D95
+LOAD_EDITORZ% = &9D95
+
+ORG CODE_EDITORZ%
+
+INCLUDE "1-source-files/main-sources/elite-universe-editor-z.asm"
+
+SAVE "3-assembled-output/EDITORZ.unprot.bin", CODE_EDITORZ%, P%, LOAD_EDITORZ%
 
                         \ --- End of added code ------------------------------->

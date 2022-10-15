@@ -15324,7 +15324,7 @@ S.ELTG &6FE0  &793C  &1300  &6FE0
      7FA2   A9 A5      LDA #&A5
      7FA4   8D D5 58   STA &58D5
      7FA7   20 E6 67   JSR &67E6
-     7FAA   4C C5 9E   JMP &9EC5
+     7FAA   4C C7 9E   JMP &9EC7
 .endUniverseEditor3
 .F%
      7FAD
@@ -17332,6 +17332,295 @@ End macro ECHR
      BE4D   4C B3 21   JMP &21B3
 .endUniverseEditor4
 Saving file '3-assembled-output/EDITOR.unprot.bin'
+.rowOffsets
+     9D95   0B
+     9D96   0C
+     9D97   0D
+     9D98   0E
+     9D99   15
+     9D9A   1C
+     9D9B   1D
+     9D9C   FF
+     9D9D   01
+     9D9E   02
+     9D9F   03
+     9DA0   04
+     9DA1   05
+     9DA2   09
+     9DA3   0A
+     9DA4   0B
+     9DA5   0C
+     9DA6   0D
+     9DA7   11
+     9DA8   12
+     9DA9   13
+     9DAA   14
+     9DAB   15
+     9DAC   19
+     9DAD   1B
+     9DAE   1C
+     9DAF   1D
+     9DB0   FF
+     9DB1   01
+     9DB2   02
+     9DB3   03
+     9DB4   04
+     9DB5   05
+     9DB6   09
+     9DB7   0A
+     9DB8   0B
+     9DB9   0C
+     9DBA   0D
+     9DBB   11
+     9DBC   12
+     9DBD   13
+     9DBE   14
+     9DBF   15
+     9DC0   19
+     9DC1   1A
+     9DC2   1B
+     9DC3   1C
+     9DC4   FF
+     9DC5   11
+     9DC6   12
+     9DC7   13
+     9DC8   14
+     9DC9   19
+     9DCA   1A
+     9DCB   1B
+     9DCC   1C
+     9DCD   FF
+     9DCE   09
+     9DCF   0A
+     9DD0   0B
+     9DD1   0C
+     9DD2   0D
+     9DD3   11
+     9DD4   14
+     9DD5   1B
+     9DD6   1C
+     9DD7   1D
+     9DD8   FF
+.editorRows
+     9DD9   14
+     9DDA   14
+     9DDB   3C
+     9DDC   14
+     9DDD   14
+     9DDE   00
+     9DDF   00
+     9DE0   FF
+     9DE1   1B
+     9DE2   1B
+     9DE3   1B
+     9DE4   1B
+     9DE5   1B
+     9DE6   33
+     9DE7   11
+     9DE8   11
+     9DE9   33
+     9DEA   11
+     9DEB   11
+     9DEC   11
+     9DED   11
+     9DEE   11
+     9DEF   11
+     9DF0   00
+     9DF1   00
+     9DF2   00
+     9DF3   00
+     9DF4   FF
+     9DF5   1B
+     9DF6   1B
+     9DF7   1B
+     9DF8   1B
+     9DF9   1B
+     9DFA   11
+     9DFB   11
+     9DFC   11
+     9DFD   11
+     9DFE   11
+     9DFF   22
+     9E00   11
+     9E01   22
+     9E02   11
+     9E03   22
+     9E04   00
+     9E05   00
+     9E06   00
+     9E07   00
+     9E08   FF
+     9E09   11
+     9E0A   22
+     9E0B   22
+     9E0C   22
+     9E0D   00
+     9E0E   22
+     9E0F   22
+     9E10   22
+     9E11   FF
+     9E12   11
+     9E13   11
+     9E14   33
+     9E15   11
+     9E16   11
+     9E17   11
+     9E18   00
+     9E19   22
+     9E1A   22
+     9E1B   22
+     9E1C   FF
+.gameRows
+     9E1D   00
+     9E1E   3C
+     9E1F   00
+     9E20   00
+     9E21   00
+     9E22   28
+     9E23   28
+     9E24   FF
+     9E25   1E
+     9E26   1E
+     9E27   1E
+     9E28   1E
+     9E29   1E
+     9E2A   3C
+     9E2B   14
+     9E2C   14
+     9E2D   3C
+     9E2E   14
+     9E2F   14
+     9E30   14
+     9E31   14
+     9E32   00
+     9E33   14
+     9E34   28
+     9E35   28
+     9E36   28
+     9E37   28
+     9E38   FF
+     9E39   1E
+     9E3A   1E
+     9E3B   1E
+     9E3C   1E
+     9E3D   1E
+     9E3E   28
+     9E3F   00
+     9E40   28
+     9E41   00
+     9E42   00
+     9E43   28
+     9E44   28
+     9E45   28
+     9E46   28
+     9E47   14
+     9E48   28
+     9E49   28
+     9E4A   28
+     9E4B   28
+     9E4C   FF
+     9E4D   33
+     9E4E   11
+     9E4F   11
+     9E50   11
+     9E51   22
+     9E52   00
+     9E53   00
+     9E54   00
+     9E55   FF
+     9E56   00
+     9E57   00
+     9E58   00
+     9E59   00
+     9E5A   22
+     9E5B   33
+     9E5C   11
+     9E5D   00
+     9E5E   00
+     9E5F   00
+     9E60   FF
+.ModifyDashboard
+     9E61   A0 00      LDY #&00
+.mod1
+     9E63   B1 0C      LDA (&0C),Y
+     9E65   85 7C      STA &7C
+     9E67   30 0D      BMI &9E76
+     9E69   84 56      STY &56
+     9E6B   B1 7A      LDA (&7A),Y
+     9E6D   A4 7C      LDY &7C
+     9E6F   91 0A      STA (&0A),Y
+     9E71   A4 56      LDY &56
+     9E73   C8         INY
+     9E74   D0 ED      BNE &9E63
+.mod2
+     9E76   C8         INY
+     9E77   98         TYA
+     9E78   18         CLC
+     9E79   65 0C      ADC &0C
+     9E7B   85 0C      STA &0C
+     9E7D   90 02      BCC &9E81
+     9E7F   E6 0D      INC &0D
+.mod3
+     9E81   98         TYA
+     9E82   18         CLC
+     9E83   65 7A      ADC &7A
+     9E85   85 7A      STA &7A
+     9E87   90 02      BCC &9E8B
+     9E89   E6 7B      INC &7B
+.mod4
+     9E8B   E6 0B      INC &0B
+     9E8D   E6 0B      INC &0B
+     9E8F   60         RTS
+.EditorDashboard
+     9E90   A9 0F      LDA #&0F
+     9E92   8D 34 FE   STA &FE34
+     9E95   A9 33      LDA #&33
+     9E97   8D 0C 7A   STA &7A0C
+     9E9A   A9 00      LDA #&00
+     9E9C   85 0A      STA &0A
+     9E9E   A9 70      LDA #&70
+     9EA0   85 0B      STA &0B
+     9EA2   A9 95      LDA #&95
+     9EA4   85 0C      STA &0C
+     9EA6   A9 9D      LDA #&9D
+     9EA8   85 0D      STA &0D
+     9EAA   A9 D9      LDA #&D9
+     9EAC   85 7A      STA &7A
+     9EAE   A9 9D      LDA #&9D
+     9EB0   85 7B      STA &7B
+     9EB2   20 61 9E   JSR &9E61
+     9EB5   20 61 9E   JSR &9E61
+     9EB8   20 61 9E   JSR &9E61
+     9EBB   20 61 9E   JSR &9E61
+     9EBE   20 61 9E   JSR &9E61
+     9EC1   A9 09      LDA #&09
+     9EC3   8D 34 FE   STA &FE34
+     9EC6   60         RTS
+.GameDashboard
+     9EC7   A9 0F      LDA #&0F
+     9EC9   8D 34 FE   STA &FE34
+     9ECC   A9 00      LDA #&00
+     9ECE   85 0A      STA &0A
+     9ED0   A9 70      LDA #&70
+     9ED2   85 0B      STA &0B
+     9ED4   A9 95      LDA #&95
+     9ED6   85 0C      STA &0C
+     9ED8   A9 9D      LDA #&9D
+     9EDA   85 0D      STA &0D
+     9EDC   A9 1D      LDA #&1D
+     9EDE   85 7A      STA &7A
+     9EE0   A9 9E      LDA #&9E
+     9EE2   85 7B      STA &7B
+     9EE4   20 61 9E   JSR &9E61
+     9EE7   20 61 9E   JSR &9E61
+     9EEA   20 61 9E   JSR &9E61
+     9EED   20 61 9E   JSR &9E61
+     9EF0   20 61 9E   JSR &9E61
+     9EF3   A9 09      LDA #&09
+     9EF5   8D 34 FE   STA &FE34
+     9EF8   60         RTS
+.endUniverseEditorZ
+Saving file '3-assembled-output/EDITORZ.unprot.bin'
 .DIALS
      7E00
      7F00
@@ -27774,294 +28063,6 @@ Macro FACE:
      9D93   00
      9D94   C4
 End macro FACE
-.rowOffsets
-     9D95   0B
-     9D96   0C
-     9D97   0D
-     9D98   0E
-     9D99   15
-     9D9A   1C
-     9D9B   1D
-     9D9C   FF
-     9D9D   01
-     9D9E   02
-     9D9F   03
-     9DA0   04
-     9DA1   05
-     9DA2   09
-     9DA3   0A
-     9DA4   0B
-     9DA5   0C
-     9DA6   0D
-     9DA7   11
-     9DA8   12
-     9DA9   13
-     9DAA   14
-     9DAB   15
-     9DAC   19
-     9DAD   1B
-     9DAE   1C
-     9DAF   1D
-     9DB0   FF
-     9DB1   01
-     9DB2   02
-     9DB3   03
-     9DB4   04
-     9DB5   05
-     9DB6   09
-     9DB7   0A
-     9DB8   0B
-     9DB9   0C
-     9DBA   0D
-     9DBB   11
-     9DBC   12
-     9DBD   13
-     9DBE   14
-     9DBF   15
-     9DC0   19
-     9DC1   1A
-     9DC2   1B
-     9DC3   1C
-     9DC4   FF
-     9DC5   11
-     9DC6   12
-     9DC7   13
-     9DC8   14
-     9DC9   19
-     9DCA   1A
-     9DCB   1B
-     9DCC   1C
-     9DCD   FF
-     9DCE   09
-     9DCF   0A
-     9DD0   0B
-     9DD1   0C
-     9DD2   0D
-     9DD3   11
-     9DD4   14
-     9DD5   1B
-     9DD6   1C
-     9DD7   1D
-     9DD8   FF
-.editorRows
-     9DD9   14
-     9DDA   14
-     9DDB   3C
-     9DDC   14
-     9DDD   14
-     9DDE   00
-     9DDF   00
-     9DE0   FF
-     9DE1   1B
-     9DE2   1B
-     9DE3   1B
-     9DE4   1B
-     9DE5   1B
-     9DE6   33
-     9DE7   11
-     9DE8   11
-     9DE9   33
-     9DEA   11
-     9DEB   11
-     9DEC   11
-     9DED   11
-     9DEE   11
-     9DEF   11
-     9DF0   00
-     9DF1   00
-     9DF2   00
-     9DF3   00
-     9DF4   FF
-     9DF5   1B
-     9DF6   1B
-     9DF7   1B
-     9DF8   1B
-     9DF9   1B
-     9DFA   11
-     9DFB   11
-     9DFC   11
-     9DFD   11
-     9DFE   11
-     9DFF   22
-     9E00   11
-     9E01   22
-     9E02   11
-     9E03   22
-     9E04   00
-     9E05   00
-     9E06   00
-     9E07   00
-     9E08   FF
-     9E09   11
-     9E0A   22
-     9E0B   22
-     9E0C   22
-     9E0D   00
-     9E0E   22
-     9E0F   22
-     9E10   22
-     9E11   FF
-     9E12   11
-     9E13   11
-     9E14   33
-     9E15   11
-     9E16   11
-     9E17   11
-     9E18   00
-     9E19   22
-     9E1A   22
-     9E1B   22
-     9E1C   FF
-.gameRows
-     9E1D   00
-     9E1E   3C
-     9E1F   00
-     9E20   00
-     9E21   00
-     9E22   28
-     9E23   28
-     9E24   FF
-     9E25   1E
-     9E26   1E
-     9E27   1E
-     9E28   1E
-     9E29   1E
-     9E2A   3C
-     9E2B   14
-     9E2C   14
-     9E2D   3C
-     9E2E   14
-     9E2F   14
-     9E30   14
-     9E31   14
-     9E32   00
-     9E33   14
-     9E34   28
-     9E35   28
-     9E36   28
-     9E37   28
-     9E38   FF
-     9E39   1E
-     9E3A   1E
-     9E3B   1E
-     9E3C   1E
-     9E3D   1E
-     9E3E   28
-     9E3F   00
-     9E40   28
-     9E41   00
-     9E42   00
-     9E43   28
-     9E44   28
-     9E45   28
-     9E46   28
-     9E47   14
-     9E48   28
-     9E49   28
-     9E4A   28
-     9E4B   28
-     9E4C   FF
-     9E4D   33
-     9E4E   11
-     9E4F   11
-     9E50   11
-     9E51   22
-     9E52   00
-     9E53   00
-     9E54   00
-     9E55   FF
-     9E56   00
-     9E57   00
-     9E58   00
-     9E59   00
-     9E5A   22
-     9E5B   33
-     9E5C   11
-     9E5D   00
-     9E5E   00
-     9E5F   00
-     9E60   FF
-.ModifyDashboard
-     9E61   A0 00      LDY #&00
-.mod1
-     9E63   B1 0C      LDA (&0C),Y
-     9E65   85 7C      STA &7C
-     9E67   30 0D      BMI &9E76
-     9E69   84 56      STY &56
-     9E6B   B1 7A      LDA (&7A),Y
-     9E6D   A4 7C      LDY &7C
-     9E6F   91 0A      STA (&0A),Y
-     9E71   A4 56      LDY &56
-     9E73   C8         INY
-     9E74   D0 ED      BNE &9E63
-.mod2
-     9E76   C8         INY
-     9E77   98         TYA
-     9E78   18         CLC
-     9E79   65 0C      ADC &0C
-     9E7B   85 0C      STA &0C
-     9E7D   90 02      BCC &9E81
-     9E7F   E6 0D      INC &0D
-.mod3
-     9E81   98         TYA
-     9E82   18         CLC
-     9E83   65 7A      ADC &7A
-     9E85   85 7A      STA &7A
-     9E87   90 02      BCC &9E8B
-     9E89   E6 7B      INC &7B
-.mod4
-     9E8B   E6 0B      INC &0B
-     9E8D   E6 0B      INC &0B
-     9E8F   60         RTS
-.EditorDashboard
-     9E90   A9 0F      LDA #&0F
-     9E92   8D 34 FE   STA &FE34
-     9E95   A9 33      LDA #&33
-     9E97   8D 0C 7A   STA &7A0C
-     9E9A   A9 00      LDA #&00
-     9E9C   85 0A      STA &0A
-     9E9E   A9 70      LDA #&70
-     9EA0   85 0B      STA &0B
-     9EA2   A9 95      LDA #&95
-     9EA4   85 0C      STA &0C
-     9EA6   A9 9D      LDA #&9D
-     9EA8   85 0D      STA &0D
-     9EAA   A9 D9      LDA #&D9
-     9EAC   85 7A      STA &7A
-     9EAE   A9 9D      LDA #&9D
-     9EB0   85 7B      STA &7B
-     9EB2   20 61 9E   JSR &9E61
-     9EB5   20 61 9E   JSR &9E61
-     9EB8   20 61 9E   JSR &9E61
-     9EBB   20 61 9E   JSR &9E61
-     9EBE   20 61 9E   JSR &9E61
-     9EC1   A9 09      LDA #&09
-     9EC3   8D 34 FE   STA &FE34
-     9EC6   60         RTS
-.GameDashboard
-     9EC7   A9 0F      LDA #&0F
-     9EC9   8D 34 FE   STA &FE34
-     9ECC   A9 00      LDA #&00
-     9ECE   85 0A      STA &0A
-     9ED0   A9 70      LDA #&70
-     9ED2   85 0B      STA &0B
-     9ED4   A9 95      LDA #&95
-     9ED6   85 0C      STA &0C
-     9ED8   A9 9D      LDA #&9D
-     9EDA   85 0D      STA &0D
-     9EDC   A9 1D      LDA #&1D
-     9EDE   85 7A      STA &7A
-     9EE0   A9 9E      LDA #&9E
-     9EE2   85 7B      STA &7B
-     9EE4   20 61 9E   JSR &9E61
-     9EE7   20 61 9E   JSR &9E61
-     9EEA   20 61 9E   JSR &9E61
-     9EED   20 61 9E   JSR &9E61
-     9EF0   20 61 9E   JSR &9E61
-     9EF3   A9 09      LDA #&09
-     9EF5   8D 34 FE   STA &FE34
-     9EF8   60         RTS
-.endUniverseEditorZ
 .QQ18
 Macro RTOK:
      A000   4C
