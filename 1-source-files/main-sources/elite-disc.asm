@@ -45,3 +45,7 @@ ELIF _COMPACT
 ENDIF
 
 PUTFILE "3-assembled-output/README.txt", "README", &FFFFFF, &FFFFFF
+
+\ Universe files added for Universe Editor
+
+PUTFILE "1-source-files/universe-files/U.BOXART2.bin", "U.BOXART2", &000000, &000000
