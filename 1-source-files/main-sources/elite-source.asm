@@ -36209,11 +36209,11 @@ ENDIF
  LDA #6                 \ Print extended token 6 ("UNIVERSE EDITOR")
  JSR PrintToken
 
+ JSR MT19               \ Call MT19 to capitalise the next letter (i.e. set
+                        \ Sentence Case for this word only)
+
  NOP                    \ Pad out the code to the same width to prevent build
  NOP                    \ issues
- NOP
- NOP
- NOP
 
                         \ --- End of added code ------------------------------->
 
