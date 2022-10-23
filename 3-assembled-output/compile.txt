@@ -15983,9 +15983,11 @@ Saving file '3-assembled-output/BCODE.unprot.bin'
      B675   20 8A 5C   JSR &5C8A
      B678   68         PLA
      B679   60         RTS
-.DrawShip
+.DrawShipScanner
      B67A   20 D0 7A   JSR &7AD0
+.DrawShipStore
      B67D   20 E2 7F   JSR &7FE2
+.DrawShip
      B680   20 A0 7C   JSR &7CA0
      B683   20 17 71   JSR &7117
      B686   A0 1F      LDY #&1F
