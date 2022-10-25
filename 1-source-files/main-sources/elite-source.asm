@@ -46320,7 +46320,7 @@ _6502SP_VERSION = FALSE
 _MASTER_VERSION = TRUE
 
 INCLUDE "1-source-files/main-sources/elite-universe-editor-variables.asm"
-INCLUDE "1-source-files/main-sources/elite-universe-editor3.asm"
+INCLUDE "1-source-files/main-sources/elite-universe-editor-3.asm"
 
                         \ --- End of added code ------------------------------->
 
@@ -46386,9 +46386,9 @@ LOAD_EDITOR% = &B200
 
 ORG CODE_EDITOR%
 
-INCLUDE "1-source-files/main-sources/elite-universe-editor1.asm"
-INCLUDE "1-source-files/main-sources/elite-universe-editor2.asm"
-INCLUDE "1-source-files/main-sources/elite-universe-editor4.asm"
+INCLUDE "1-source-files/main-sources/elite-universe-editor-1.asm"
+INCLUDE "1-source-files/main-sources/elite-universe-editor-2.asm"
+INCLUDE "1-source-files/main-sources/elite-universe-editor-4.asm"
 
 SAVE "3-assembled-output/EDITOR.unprot.bin", CODE_EDITOR%, P%, LOAD_EDITOR%
 
