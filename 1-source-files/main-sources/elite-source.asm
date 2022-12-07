@@ -46330,6 +46330,7 @@ ENDIF
 
 _6502SP_VERSION = FALSE
 _MASTER_VERSION = TRUE
+_C64_VERSION    = FALSE
 
 INCLUDE "1-source-files/main-sources/elite-universe-editor-variables.asm"
 INCLUDE "1-source-files/main-sources/elite-universe-editor-3.asm"
