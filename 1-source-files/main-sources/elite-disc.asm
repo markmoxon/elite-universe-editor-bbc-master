@@ -52,3 +52,5 @@ PUTFILE "1-source-files/universe-files/U.BOXART1.bin", "U.BOXART1", &000000, &00
 PUTFILE "1-source-files/universe-files/U.BOXART2.bin", "U.BOXART2", &000000, &000000
 PUTFILE "1-source-files/universe-files/U.MANUAL.bin", "U.MANUAL", &000000, &000000
 PUTFILE "1-source-files/universe-files/U.SHIPID.bin", "U.SHIPID", &000000, &000000
+
+PUTFILE "1-source-files/basic-programs/B.CONVERT.bin", "B.CONVERT", &FF0E00, &FF8023
