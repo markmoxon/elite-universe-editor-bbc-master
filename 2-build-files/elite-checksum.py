@@ -40,10 +40,10 @@ scramble_from = 0x2cc1
 
 if release == 1:
     # SNG47
-    scramble_to = 0x8000 - 1    # Modified for Universe Editor to F% - 1
+    scramble_to = 0x8000 - 1    # F%-1
 elif release == 2:
     # Compact
-    scramble_to = 0x7FEC
+    scramble_to = 0x7FED - 1    # F%-1
 
 data_block = bytearray()
 
