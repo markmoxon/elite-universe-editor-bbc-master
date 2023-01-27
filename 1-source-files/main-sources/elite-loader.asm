@@ -459,7 +459,7 @@ ENDIF
                         \ We now want to copy &41 pages of memory (&4100 bytes)
                         \ from &2200-&62FF to &7F00-&BFFF in main memory
 
- LDX #&41               \ Set a page counter in X to copy &33 pages
+ LDX #&41               \ Set a page counter in X to copy &41 pages
 
                         \ --- End of replacement ------------------------------>
 
