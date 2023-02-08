@@ -3318,7 +3318,7 @@ ENDMACRO
 \
 \ ******************************************************************************
 
-                        \ --- Mod: Original Acornsoft code removed: ----------->
+                        \ --- Mod: Code removed for Universe Editor: ---------->
 
 \IF _MATCH_ORIGINAL_BINARIES
 
