@@ -46588,12 +46588,12 @@ ENDIF
 
                         \ --- Mod: Code added for Universe Editor: ------------>
 
-_6502SP_VERSION = FALSE
-_MASTER_VERSION = TRUE
-_C64_VERSION    = FALSE
+ _6502SP_VERSION = FALSE
+ _MASTER_VERSION = TRUE
+ _C64_VERSION    = FALSE
 
-INCLUDE "1-source-files/main-sources/elite-universe-editor-variables.asm"
-INCLUDE "1-source-files/main-sources/elite-universe-editor-3.asm"
+ INCLUDE "1-source-files/main-sources/elite-universe-editor-variables.asm"
+ INCLUDE "1-source-files/main-sources/elite-universe-editor-3.asm"
 
                         \ --- End of added code ------------------------------->
 
@@ -46675,13 +46675,13 @@ ENDIF
 
                         \ --- Mod: Code added for Universe Editor: ------------>
 
-CODE_EDITORZ% = &9D95
-LOAD_EDITORZ% = &9D95
+ CODE_EDITORZ% = &9D95
+ LOAD_EDITORZ% = &9D95
 
-ORG CODE_EDITORZ%
+ ORG CODE_EDITORZ%
 
-INCLUDE "1-source-files/main-sources/elite-universe-editor-z.asm"
+ INCLUDE "1-source-files/main-sources/elite-universe-editor-z.asm"
 
-SAVE "3-assembled-output/EDITORZ.unprot.bin", CODE_EDITORZ%, P%, LOAD_EDITORZ%
+ SAVE "3-assembled-output/EDITORZ.unprot.bin", CODE_EDITORZ%, P%, LOAD_EDITORZ%
 
                         \ --- End of added code ------------------------------->

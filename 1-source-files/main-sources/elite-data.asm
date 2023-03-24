@@ -3336,9 +3336,9 @@ ENDMACRO
 
                         \ --- And replaced by: -------------------------------->
 
-INCBIN "3-assembled-output/EDITORZ.unprot.bin"
+ INCBIN "3-assembled-output/EDITORZ.unprot.bin"
 
-ORG &A000
+ ORG &A000
 
                         \ --- End of added code ------------------------------->
 
@@ -9069,7 +9069,7 @@ ENDIF
 
                         \ --- Mod: Code added for Universe Editor: ------------>
 
-INCBIN "3-assembled-output/EDITOR.unprot.bin"
+ INCBIN "3-assembled-output/EDITOR.unprot.bin"
 
                         \ --- End of added code ------------------------------->
 
