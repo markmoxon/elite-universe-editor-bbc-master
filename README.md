@@ -22,14 +22,20 @@ See the [introduction](#introduction) for more information.
 
 * [Folder structure](#folder-structure)
 
+* [Flicker-free Elite](#flicker-free-elite)
+
+* [BBC Master Elite with music](#bbc-master-elite-with-music)
+
 * [Building Elite from the source](#building-elite-from-the-source)
 
   * [Requirements](#requirements)
   * [Build targets](#build-targets)
   * [Windows](#windows)
   * [Mac and Linux](#mac-and-linux)
+  * [Updating the checksum scripts if you change the code](#updating-the-checksum-scripts-if-you-change-the-code)
   * [Verifying the output](#verifying-the-output)
   * [Log files](#log-files)
+  * [Auto-deploying to the b2 emulator](#auto-deploying-to-the-b2-emulator)
 
 * [Building different variants of BBC Master Elite](#building-different-variants-of-bbc-master-elite)
 
@@ -121,6 +127,24 @@ There are five main folders in this repository, which reflect the order of the b
 
 * [5-compiled-game-discs](5-compiled-game-discs) contains the final output of the build process: an SSD disc image that contains the compiled game and which can be run on real hardware or in an emulator.
 
+## Flicker-free Elite
+
+This repository also includes a flicker-free version, which incorporates a fix for planets so they no longer flicker. The flicker-free code is in a separate branch called `flicker-free`, and apart from the code differences for reducing flicker, this branch is identical to the main branch and the same build process applies.
+
+The annotated source files in the `flicker-free` branch contain both the original Acornsoft code and all of the modifications for flicker-free Elite, so you can look through the source to see exactly what's changed. Any code that I've removed from the original version is commented out in the source files, so when they are assembled they produce the flicker-free binaries, while still containing details of all the modifications. You can find all the diffs by searching the sources for `Mod:`.
+
+For more information on flicker-free Elite, see the [hacks section of the accompanying website](https://www.bbcelite.com/hacks/flicker-free_elite.html).
+
+## BBC Master Elite with music
+
+This repository also includes a version of BBC Master Elite that includes the music from the Commodore 64 version. The music-specific code is in a separate branch called `music`, and apart from the code differences for adding the music, this branch is identical to the main branch and the same build process applies.
+
+The annotated source files in the `music` branch contain both the original Acornsoft code and all of the modifications for the musical version of Elite, so you can look through the source to see exactly what's changed. Any code that I've removed from the original version is commented out in the source files, so when they are assembled they produce the music-enabled binaries, while still containing details of all the modifications. You can find all the diffs by searching the sources for `Mod:`.
+
+The music itself is built as a sideways ROM using the code in the [elite-music repository](https://github.com/markmoxon/elite-music/).
+
+For more information on the music, see the [hacks section of the accompanying website](https://www.bbcelite.com/hacks/bbc_elite_with_music.html).
+
 ## Building Elite from the source
 
 ### Requirements
@@ -182,6 +206,12 @@ make encrypt
 
 will produce a file called `elite-master-sng47.ssd` in the `5-compiled-game-discs` folder that contains the SNG47 release, which you can then load into an emulator, or into a real BBC Micro using a device like a Gotek.
 
+### Updating the checksum scripts if you change the code
+
+If you change the source code in any way, you may break the game; if so, it will typically hang at the loading screen, though in some versions it may hang when launching from the space station.
+
+To fix this, you may need to update some of the hard-coded addresses in the checksum script so that they match the new addresses in your changed version of the code. See the comments in the [elite-checksum.py](2-build-files/elite-checksum.py) script for details.
+
 ### Verifying the output
 
 The build process also supports a verification target that prints out checksums of all the generated files, along with the checksums of the files from the original sources.
@@ -231,6 +261,24 @@ All the compiled binaries match the originals, so we know we are producing the s
 ### Log files
 
 During compilation, details of every step are output in a file called `compile.txt` in the `3-assembled-output` folder. If you have problems, it might come in handy, and it's a great reference if you need to know the addresses of labels and variables for debugging (or just snooping around).
+
+### Auto-deploying to the b2 emulator
+
+For users of the excellent [b2 emulator](https://github.com/tom-seddon/b2), you can include the build parameter `b2` to automatically load and boot the assembled disc image in b2. The b2 emulator must be running for this to work.
+
+For example, to build, verify and load into b2, you can do this on Windows:
+
+```
+make.bat encrypt verify b2
+```
+
+or this on Mac/Linux:
+
+```
+make encrypt verify b2
+```
+
+Note that you should manually choose the correct platform in b2 (I intentionally haven't automated this part to make it easier to test across multiple platforms).
 
 ## Building different variants of BBC Master Elite
 

@@ -29,10 +29,10 @@
 \
 \ ******************************************************************************
 
-INCLUDE "1-source-files/main-sources/elite-build-options.asm"
+ INCLUDE "1-source-files/main-sources/elite-build-options.asm"
 
-_SNG47                  = (_VARIANT = 1)
-_COMPACT                = (_VARIANT = 2)
+ _SNG47                 = (_VARIANT = 1)
+ _COMPACT               = (_VARIANT = 2)
 
 IF _SNG47
  PUTFILE "3-assembled-output/M128Elt.bin", "M128Elt", &FF0E00, &FF0E43
@@ -44,13 +44,11 @@ ELIF _COMPACT
  PUTFILE "3-assembled-output/BCODE.bin", "ELITE", &001300, &002C6C
 ENDIF
 
-PUTFILE "3-assembled-output/README.txt", "README", &FFFFFF, &FFFFFF
+ PUTFILE "3-assembled-output/README.txt", "README", &FFFFFF, &FFFFFF
 
-\ Universe files added for Universe Editor
+ PUTFILE "1-source-files/universe-files/U.BOXART1.bin", "U.BOXART1", &000000, &000000
+ PUTFILE "1-source-files/universe-files/U.BOXART2.bin", "U.BOXART2", &000000, &000000
+ PUTFILE "1-source-files/universe-files/U.MANUAL.bin", "U.MANUAL", &000000, &000000
+ PUTFILE "1-source-files/universe-files/U.SHIPID.bin", "U.SHIPID", &000000, &000000
 
-PUTFILE "1-source-files/universe-files/U.BOXART1.bin", "U.BOXART1", &000000, &000000
-PUTFILE "1-source-files/universe-files/U.BOXART2.bin", "U.BOXART2", &000000, &000000
-PUTFILE "1-source-files/universe-files/U.MANUAL.bin", "U.MANUAL", &000000, &000000
-PUTFILE "1-source-files/universe-files/U.SHIPID.bin", "U.SHIPID", &000000, &000000
-
-PUTFILE "1-source-files/basic-programs/B.CONVERT.bin", "B.CONVERT", &FF0E00, &FF8023
+ PUTFILE "1-source-files/basic-programs/B.CONVERT.bin", "B.CONVERT", &FF0E00, &FF8023
