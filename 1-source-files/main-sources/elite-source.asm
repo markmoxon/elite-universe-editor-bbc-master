@@ -13380,21 +13380,43 @@ ENDIF
 
  EQUB 70                \ QQ14 = Fuel level, #13
 
- EQUB %10000000 AND Q%  \ COK = Competition flags, #14
+                        \ --- Mod: Code removed for Universe Editor: ---------->
+
+\EQUB %10000000 AND Q%  \ COK = Competition flags, #14
+
+                        \ --- And replaced by: -------------------------------->
+
+ EQUB 0                 \ COK = Competition flags, #14
+
+                        \ --- End of replacement ------------------------------>
 
  EQUB 0                 \ GCNT = Galaxy number, 0-7, #15
 
-IF Q%
- EQUB Armlas            \ LASER = Front laser, #16
-ELSE
- EQUB POW               \ LASER = Front laser, #16
-ENDIF
+                        \ --- Mod: Code removed for Universe Editor: ---------->
 
- EQUB POW AND Q%        \ LASER = Rear laser, #16
+\IF Q%
+\ EQUB Armlas           \ LASER = Front laser, #16
+\ELSE
+\ EQUB POW              \ LASER = Front laser, #16
+\ENDIF
+\
+\EQUB POW AND Q%        \ LASER = Rear laser, #16
+\
+\EQUB (POW+128) AND Q%  \ LASER+2 = Left laser, #18
+\
+\EQUB Mlas AND Q%       \ LASER+3 = Right laser, #19
 
- EQUB (POW+128) AND Q%  \ LASER+2 = Left laser, #18
+                        \ --- And replaced by: -------------------------------->
 
- EQUB Mlas AND Q%       \ LASER+3 = Right laser, #19
+ EQUB POW+128           \ LASER = Front laser, #16
+
+ EQUB POW+128           \ LASER = Rear laser, #16
+
+ EQUB 0                 \ LASER+2 = Left laser, #18
+
+ EQUB 0                 \ LASER+3 = Right laser, #19
+
+                        \ --- End of replacement ------------------------------>
 
  EQUW 0                 \ These bytes appear to be unused (they were originally
                         \ used for up/down lasers, but they were dropped),
@@ -13461,7 +13483,15 @@ ENDIF
  EQUB 0                 \ QQ26 = Random byte that changes for each visit to a
                         \ system, for randomising market prices, #70
 
- EQUW 20000 AND Q%      \ TALLY = Number of kills, #71-72
+                        \ --- Mod: Code removed for Universe Editor: ---------->
+
+\EQUW 20000 AND Q%      \ TALLY = Number of kills, #71-72
+
+                        \ --- And replaced by: -------------------------------->
+
+ EQUW 0                 \ TALLY = Number of kills, #71-72
+
+                        \ --- End of replacement ------------------------------>
 
  EQUB 128               \ SVC = Save count, #73
 
