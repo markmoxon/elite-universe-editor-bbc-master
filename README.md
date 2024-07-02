@@ -2,7 +2,7 @@
 
 ![The Elite Universe Editor on the BBC Micro](https://elite.bbcelite.com/images/github/elite-universe-editor-home-screen.png)
 
-This repository contains source code for the Elite Universe Editor on the BBC Master.
+This repository contains source code for the Elite Universe Editor on the BBC Master. You can build it using `make`.
 
 The Elite Universe Editor allows you to create your own universes in classic BBC Micro and Commodore 64 Elite. For more information, see the [bbcelite.com website](https://elite.bbcelite.com/hacks/elite_universe_editor.html).
 
@@ -51,7 +51,6 @@ The reason for this is that my commentary is intertwined with the original Elite
 Under GitHub's rules, you have the right to read and fork this repository... but that's it. No other use is permitted, I'm afraid.
 
 My hope is that the educational and non-profit intentions of this repository will enable it to stay hosted and available, but the original copyright holders do have the right to ask for it to be taken down, in which case I will comply without hesitation. I do hope, though, that along with the various other disassemblies and commentaries of this source, it will remain viable.
-
 
 ---
 
