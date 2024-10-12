@@ -48289,8 +48289,8 @@ ENDIF
  _MASTER_VERSION = TRUE
  _C64_VERSION    = FALSE
 
- INCLUDE "library-elite-universe-editor/main-sources/elite-universe-editor-variables.asm"
- INCLUDE "library-elite-universe-editor/main-sources/elite-universe-editor-3.asm"
+ INCLUDE "elite-universe-editor-library/main-sources/elite-universe-editor-variables.asm"
+ INCLUDE "elite-universe-editor-library/main-sources/elite-universe-editor-3.asm"
 
                         \ --- End of added code ------------------------------->
 
@@ -48365,9 +48365,9 @@ ENDIF
 
  ORG CODE_EDITOR%
 
- INCLUDE "library-elite-universe-editor/main-sources/elite-universe-editor-1.asm"
- INCLUDE "library-elite-universe-editor/main-sources/elite-universe-editor-2.asm"
- INCLUDE "library-elite-universe-editor/main-sources/elite-universe-editor-4.asm"
+ INCLUDE "elite-universe-editor-library/main-sources/elite-universe-editor-1.asm"
+ INCLUDE "elite-universe-editor-library/main-sources/elite-universe-editor-2.asm"
+ INCLUDE "elite-universe-editor-library/main-sources/elite-universe-editor-4.asm"
 
  SAVE "3-assembled-output/EDITOR.unprot.bin", CODE_EDITOR%, P%, LOAD_EDITOR%
 
@@ -48386,7 +48386,7 @@ ENDIF
 
  ORG CODE_EDITORZ%
 
- INCLUDE "library-elite-universe-editor/main-sources/elite-universe-editor-z.asm"
+ INCLUDE "elite-universe-editor-library/main-sources/elite-universe-editor-z.asm"
 
  SAVE "3-assembled-output/EDITORZ.unprot.bin", CODE_EDITORZ%, P%, LOAD_EDITORZ%
 
